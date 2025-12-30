@@ -16,8 +16,9 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-    - run: chmod +x ./gradlew
+    - uses: gradle/actions/wrapper-validation@v5
     - uses: gradle/actions/setup-gradle@v5
+    - run: chmod +x ./gradlew
     - name: Build with Gradle Wrapper
       run: ./gradlew build
     - uses: actions/upload-artifact@v6
